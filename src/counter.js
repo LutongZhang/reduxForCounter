@@ -35,4 +35,8 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(state => { return { count1: state.reducer1.count, count2: state.reducer2.count } }, mapDispatchToProps)(Counter)
+let mapStateToProps = (state) => {
+    return { count1: state.reducer1.count, count2: state.reducer2.count }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)
